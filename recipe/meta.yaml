@@ -31,15 +31,10 @@ requirements:
     - cmake
     - ninja
     - perl
-
   host:
     - qtbase {{ version }}
     # X11 dependencies
-    - libgl  # [linux]
     - libgl-devel  # [linux]
-    - mesa-libgl-devel  # [linux]
-    - mesalib  # [linux]
-    - libegl  # [linux]
     - libegl-devel  # [linux]
   run_constrained:
     - qt-main >={{ version }},<7
@@ -50,11 +45,7 @@ test:
     # we don't really need a compiler for testing the qsb binary, but the activation scripts help us load the CDT libraries correctly
     - {{ compiler('cxx') }}                   # [linux]
     # X11 dependencies
-    - libgl  # [linux]
     - libgl-devel  # [linux]
-    - mesa-libgl-devel  # [linux]
-    - mesalib  # [linux]
-    - libegl  # [linux]
     - libegl-devel  # [linux]
   commands:
     # no public api to test
