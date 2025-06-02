@@ -32,10 +32,7 @@ requirements:
     - ninja
     - perl
   host:
-    - qtbase {{ version }}
-    # X11 dependencies
-    - libgl-devel  # [linux]
-    - libegl-devel  # [linux]
+    - qtbase-devel {{ version }}
   run_constrained:
     - qt-main >={{ version }},<7
     - qt >={{ version }},<7
@@ -44,9 +41,6 @@ test:
   requires:
     # we don't really need a compiler for testing the qsb binary, but the activation scripts help us load the CDT libraries correctly
     - {{ compiler('cxx') }}                   # [linux]
-    # X11 dependencies
-    - libgl-devel  # [linux]
-    - libegl-devel  # [linux]
   commands:
     # no public api to test
     {% for each_qt_lib in ["ShaderTools"] %}
