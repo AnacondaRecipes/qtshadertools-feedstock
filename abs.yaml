@@ -1,3 +1,2 @@
 channels:
-  - https://staging.continuum.io/prefect/fs/mesalib-feedstock/pr1/b109927
-  - https://staging.continuum.io/prefect/fs/qtbase-feedstock/pr7/c308172
+  - https://staging.continuum.io/prefect/fs/qtbase-feedstock/pr7/1550c51
